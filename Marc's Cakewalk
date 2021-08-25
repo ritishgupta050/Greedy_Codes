@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()                                                    
+    int n;
+    cin>>n;
+
+    priority_queue<int> p;
+    //sort(a,a+n,greater<int>());        //(this is also used with array or vector.)
+
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+
+        p.push(x);
+    }
+
+    int sum = 0;
+    int pow2 = 1;
+
+    for(int i=0;i<n;i++)
+    {
+        sum += (p.top() * pow2);
+        p.pop();
+        pow2 = pow2 * 2;
+    }
+
+    cout<<sum;
+
+}
